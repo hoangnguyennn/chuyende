@@ -27,7 +27,7 @@ module.exports.checkToken = (req, res, next) => {
 };
 
 module.exports.checkAdmin = (req, res, next) => {
-  checkToken(req, res, () => {
+  this.checkToken(req, res, () => {
     const { decode } = res.locals;
 
     if (!decode) {

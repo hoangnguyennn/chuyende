@@ -13,7 +13,7 @@ module.exports.create = async (req, res) => {
       });
     }
 
-    order.customerId = decode.customerId;
+    order.customerId = decode.sub;
     const result = await OrderBO.create(order);
 
     return res.status(200).json({
@@ -30,8 +30,24 @@ module.exports.create = async (req, res) => {
 };
 
 module.exports.index = async (req, res) => {
+  const { decode } = res.locals;
+  const { customerId } = req.query;
+
   try {
-    const orders = await OrderBO.getAll();
+    let orders = await OrderBO.getAll();
+
+    if (customerId) {
+      if (decode.isAdmin || decode.sub === customerId) {
+        orders = orders.filter((order) => order.customerId === customerId);
+      } else {
+        return res.status(403).json({
+          message: "No access to resources",
+          status: false
+        });
+      }
+    } else {
+      orders = orders.filter((order) => order.customerId === decode.sub);
+    }
 
     return res.status(200).json({
       data: orders,
