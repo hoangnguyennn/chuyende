@@ -68,3 +68,30 @@ module.exports.create = async (req, res) => {
     });
   }
 };
+
+module.exports.update = async (req, res) => {
+  const { brandId } = req.params;
+  const brand = req.body;
+
+  try {
+    brand.id = brandId;
+    const result = await BrandBO.update(brandId, brand);
+
+    if (result.affectedRows) {
+      return res.status(200).json({
+        data: brand,
+        status: true
+      });
+    }
+
+    return res.status(400).json({
+      status: false
+    });
+  } catch (e) {
+    logger.error(e);
+    return res.status(400).json({
+      message: "Have error",
+      status: false
+    });
+  }
+};

@@ -11,3 +11,7 @@ module.exports.getById = (brandId) => {
 module.exports.create = (brand) => {
   return BrandDAO.create(brand);
 };
+
+module.exports.update = (brandId, newBrand) => {
+  return BrandDAO.update(brandId, newBrand);
+};

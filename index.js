@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const path = require("path");
+const cors = require("cors");
 
 const APIRoutes = require("./api/routes");
 
@@ -11,7 +13,22 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: true,
+    credentials: true
+  })
+);
 
 app.use(APIRoutes);
+
+app.use(
+  express
+    .Router()
+    .use(express.static(path.join(__dirname, "client/build")))
+    .use("/", (req, res) => {
+      res.sendFile(path.join(__dirname + "/client/build/index.html"));
+    })
+);
 
 app.listen(port, () => console.log(`App is listening at port ${port}`));

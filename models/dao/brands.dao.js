@@ -34,3 +34,14 @@ module.exports.create = async (brand) => {
     throw new Error(e);
   }
 };
+
+module.exports.update = async (brandId, newBrand) => {
+  try {
+    const conn = await connection(dbConfig);
+    const sql = "update brands set ? where id = ?";
+
+    return query(conn, sql, [newBrand, brandId]);
+  } catch (e) {
+    throw new Error(e);
+  }
+};

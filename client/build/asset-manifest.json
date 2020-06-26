@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e9147907.chunk.css",
+    "main.js": "/static/js/main.b1ccea4a.chunk.js",
+    "main.js.map": "/static/js/main.b1ccea4a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.197ca838.js",
+    "runtime-main.js.map": "/static/js/runtime-main.197ca838.js.map",
+    "static/css/2.d34346ea.chunk.css": "/static/css/2.d34346ea.chunk.css",
+    "static/js/2.1115ab3c.chunk.js": "/static/js/2.1115ab3c.chunk.js",
+    "static/js/2.1115ab3c.chunk.js.map": "/static/js/2.1115ab3c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.36b4ec5906c78c7ef98cb1dd08d28398.js": "/precache-manifest.36b4ec5906c78c7ef98cb1dd08d28398.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.d34346ea.chunk.css.map": "/static/css/2.d34346ea.chunk.css.map",
+    "static/css/main.e9147907.chunk.css.map": "/static/css/main.e9147907.chunk.css.map",
+    "static/js/2.1115ab3c.chunk.js.LICENSE.txt": "/static/js/2.1115ab3c.chunk.js.LICENSE.txt",
+    "static/media/default.css": "/static/media/Roboto-Thin.321de678.ttf",
+    "static/media/emptycart.png": "/static/media/emptycart.d0e76b1c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.197ca838.js",
+    "static/css/2.d34346ea.chunk.css",
+    "static/js/2.1115ab3c.chunk.js",
+    "static/css/main.e9147907.chunk.css",
+    "static/js/main.b1ccea4a.chunk.js"
+  ]
+}

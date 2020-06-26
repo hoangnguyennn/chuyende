@@ -40,7 +40,7 @@ module.exports.update = async (productId, newProduct) => {
     const conn = await connection(dbConfig);
     const sql = "update products set ? where id = ?";
 
-    return query(conn, q, [newProduct, productId]);
+    return query(conn, sql, [newProduct, productId]);
   } catch (e) {
     throw new Error(e);
   }
