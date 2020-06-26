@@ -19,6 +19,7 @@
     "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "nanoid": "^3.1.10",
+    "vhost": "^3.0.2",
     "winston": "^3.3.2"
   },
   "devDependencies": {
