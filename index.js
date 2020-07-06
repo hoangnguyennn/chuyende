@@ -17,20 +17,11 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: true,
-    credentials: true
+    credentials: true,
   })
 );
 
 app.use(APIRoutes);
-
-app.use(
-  express
-    .Router()
-    .use(express.static(path.join(__dirname, "client/build")))
-    .use("/", (req, res) => {
-      res.sendFile(path.join(__dirname + "/client/build/index.html"));
-    })
-);
 
 app.use(
   vhost(
@@ -42,6 +33,15 @@ app.use(
         res.sendFile(path.join(__dirname + "/admin/build/index.html"));
       })
   )
+);
+
+app.use(
+  express
+    .Router()
+    .use(express.static(path.join(__dirname, "client/build")))
+    .use("/", (req, res) => {
+      res.sendFile(path.join(__dirname + "/client/build/index.html"));
+    })
 );
 
 app.listen(port, () => console.log(`App is listening at port ${port}`));
